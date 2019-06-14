@@ -1,0 +1,238 @@
+<html>
+<body>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css"
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1 class="logo">
+		<span class="word1">AUTOMATION</span>
+		<span class="word2">SYSTEM</span>
+	</h1>
+
+
+
+	<div  id="ck-button">
+		<span class="switch">
+			<span class="switch-border1">
+				<span class="switch-border2">
+					<input id="switch1" type="checkbox"/>
+					<label for="switch1"></label>
+					<span class="switch-top"></span>
+					<span class="switch-shadow"></span>
+					<span class="switch-handle"></span>
+					<span class="switch-handle-left"></span>
+					<span class="switch-handle-right"></span>
+					<span class="switch-handle-top"></span>
+					<span class="switch-handle-bottom"></span>
+					<span class="switch-handle-base"></span>
+					<span class="switch-led switch-led-green">
+						<span class="switch-led-border" >
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+					<span class="switch-led switch-led-red">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</div>
+
+	<div  id="ck-button">
+		<span class="switch">
+			<span class="switch-border1">
+				<span class="switch-border2">
+					<input id="switch2" type="checkbox"/>
+					<label for="switch2"></label>
+					<span class="switch-top"></span>
+					<span class="switch-shadow"></span>
+					<span class="switch-handle"></span>
+					<span class="switch-handle-left"></span>
+					<span class="switch-handle-right"></span>
+					<span class="switch-handle-top"></span>
+					<span class="switch-handle-bottom"></span>
+					<span class="switch-handle-base"></span>
+					<span class="switch-led switch-led-green">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+					<span class="switch-led switch-led-red">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</div>
+
+	<div  id="ck-button">
+		<span class="switch">
+			<span class="switch-border1">
+				<span class="switch-border2">
+					<input id="switch3" type="checkbox"/>
+					<label for="switch3"></label>
+					<span class="switch-top"></span>
+					<span class="switch-shadow"></span>
+					<span class="switch-handle"></span>
+					<span class="switch-handle-left"></span>
+					<span class="switch-handle-right"></span>
+					<span class="switch-handle-top"></span>
+					<span class="switch-handle-bottom"></span>
+					<span class="switch-handle-base"></span>
+					<span class="switch-led switch-led-green">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+					<span class="switch-led switch-led-red">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</div>
+
+	<div  id="ck-button">
+
+		<span class="switch">
+			<span class="switch-border1">
+				<span class="switch-border2">
+					<input id="switch4" type="checkbox" />
+					<label for="switch4"></label>
+					<span class="switch-top"></span>
+					<span class="switch-shadow"></span>
+					<span class="switch-handle"></span>
+					<span class="switch-handle-left"></span>
+					<span class="switch-handle-right"></span>
+					<span class="switch-handle-top"></span>
+					<span class="switch-handle-bottom"></span>
+					<span class="switch-handle-base"></span>
+					<span class="switch-led switch-led-green">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+					<span class="switch-led switch-led-red">
+						<span class="switch-led-border">
+							<span class="switch-led-light">
+								<span class="switch-led-glow"></span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</div>
+  </body>
+  <script>
+  $(document).ready(function() {
+    $('#switch1').click(function() {
+      var current_status = ""
+      if ($('#switch1').is(":checked"))
+      {
+        var current_status = "ap";
+      }
+      else{
+        var current_status = "ar";
+      }
+      $.ajax({
+        url: "/get_toggled_status",
+        type: "get",
+        data: {status: current_status},
+        error: function(xhr) {
+
+        }
+      });
+    });
+  });
+  $(document).ready(function() {
+    $('#switch2').click(function() {
+      var current_status1 = ""
+      if ($('#switch2').is(":checked"))
+      {
+        var current_status1 = "ap1";
+      }
+      else{
+        var current_status1 = "ar1";
+      }
+      $.ajax({
+        url: "/get_toggled_status1",
+        type: "get",
+        data: {status: current_status1},
+        error: function(xhr) {
+
+        }
+      });
+    });
+  });
+  $(document).ready(function() {
+    $('#switch3').click(function() {
+      var current_status2 = ""
+      if ($('#switch3').is(":checked"))
+      {
+        var current_status2 = "ap2";
+      }
+      else{
+        var current_status2 = "ar2";
+      }
+      $.ajax({
+        url: "/get_toggled_status2",
+        type: "get",
+        data: {status: current_status2},
+        error: function(xhr) {
+
+        }
+      });
+    });
+  });
+  $(document).ready(function() {
+    $('#switch4').click(function() {
+      var current_status3 = ""
+      if ($('#switch4').is(":checked"))
+      {
+        var current_status3 = "ap3";
+      }
+      else{
+        var current_status3 = "ar3";
+      }
+      $.ajax({
+        url: "/get_toggled_status3",
+        type: "get",
+        data: {status: current_status3},
+        error: function(xhr) {
+        }
+      });
+    });
+  });
+
+
+</script>
+</html>
